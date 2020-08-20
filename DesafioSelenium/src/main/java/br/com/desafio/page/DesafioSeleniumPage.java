@@ -8,17 +8,18 @@ import br.com.desafio.dsl.DSL;
 public class DesafioSeleniumPage {
 
 	private DSL dsl;
-
+	
 	public DesafioSeleniumPage(WebDriver driver) {
 		dsl = new DSL(driver);
 	}
-
+	
+	//Id como chave
 	public void setEmail(String email) {
-		dsl.escrever("email", email);
+		dsl.escreverUsandoID("email", email);
 	}
-
+	//Id como chave
 	public void setSenha(String senha) {
-		dsl.escrever("passwd", senha);
+		dsl.escreverUsandoID("passwd", senha);
 	}
 	
 	public void setEfetuarLogin() {
@@ -27,6 +28,19 @@ public class DesafioSeleniumPage {
 	
 	public String loginSucesso() {
 		return dsl.obterRespostaLogar();
+	}
+	//XPath como chave
+	public void setCustomerId(String valor) {
+		dsl.escreverUsandoXPath("//input[@name='cusid']", valor);
+	}
+	public void clicarEmSubmit() {
+		dsl.clicar("//input[@name='submit']");
+	}
+	public String mensagemAlerta() {
+		return dsl.obterMensagemAlerta();
+	}
+	public void aceitarAlerta() {
+		dsl.aceitarAlerta();
 	}
 
 }
