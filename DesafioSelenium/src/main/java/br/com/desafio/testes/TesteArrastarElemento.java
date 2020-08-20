@@ -31,7 +31,8 @@ public class TesteArrastarElemento {
 			driver.quit();
 	}
 	@Test
-	public void testeArrastarElementos() throws InterruptedException  {
+	public void testeArrastarElementos() {
+		
 		
 		page.moverTextoBank();
 		Assert.assertEquals("BANK", page.obterTextoBank());
@@ -44,7 +45,6 @@ public class TesteArrastarElemento {
 		
 		page.moverValorSales();
 		Assert.assertEquals("5000", page.obterTextoValorSales());
-		
 		
 		Assert.assertEquals("Perfect!", page.obterPerfect());
 		
