@@ -27,7 +27,7 @@ public class DesafioSeleniumPage {
 	}
 	
 	public String loginSucesso() {
-		return dsl.obterRespostaLogar();
+		return dsl.obterResposta("//h3[contains(text(),'Successfully Logged in...')]");
 	}
 	//XPath como chave
 	public void setCustomerId(String valor) {
@@ -42,5 +42,37 @@ public class DesafioSeleniumPage {
 	public void aceitarAlerta() {
 		dsl.aceitarAlerta();
 	}
+	public void moverTextoBank() {
+		dsl.segurarMouse(700, 500);
+		dsl.arrastarMouse(350, 700);
+	}
+	public String obterTextoBank() {
+		return dsl.obterResposta("//li[contains(text(),'BANK')]");
+	}
+	public void moverValorBank() {
+		dsl.segurarMouse(400, 500);
+		dsl.arrastarMouse(650, 700);
+	}
+	public String obterTextoValorBank() {
+		return dsl.obterResposta("//ol[@id='amt7']//li[contains(text(),'5000')]");
+	}
+	public void moverTextoSales() {
+		dsl.segurarMouse(800, 500);
+		dsl.arrastarMouse(950, 700);
+	}
+	public String obterTextoSales() {
+		return dsl.obterResposta("//li[contains(text(),'SALES')]");
+	}
+	public void moverValorSales() {
+		dsl.segurarMouse(600, 500);
+		dsl.arrastarMouse(1100, 700);
+	}
+	public String obterTextoValorSales() {
+		return dsl.obterResposta("//ol[@id='amt8']//li[contains(text(),'5000')]");
+	}
+	public String obterPerfect() {
+		return dsl.obterResposta("//a[contains(text(),'Perfect!')]");
+	}
+	
 
 }

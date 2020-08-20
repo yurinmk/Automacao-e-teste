@@ -17,6 +17,7 @@ public class TesteLogin{
 	//System.getProperty("user.dir") - retorna a raiz do projeto
 	private String key = "webdriver.chrome.driver";
 	private String path = System.getProperty("user.dir") + "/src/test/resources/drivers/chromedriver.exe"; //"G:\\WS\\SeleniumDrivers\\chromedriver.exe";
+	
 	private WebDriver driver;
 	private DesafioSeleniumPage page;
 	
